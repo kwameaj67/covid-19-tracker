@@ -5,7 +5,8 @@ import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import { ApolloProvider } from 'react-apollo'
+import { client } from './Graphql/Client'
 import BottomTabNavigator from './navigation/BottomTabNavigator';
 import useLinking from './navigation/useLinking';
 
@@ -47,14 +48,16 @@ export default function App(props) {
     return null;
   } else {
     return (
-      <View style={styles.container}>
-        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
-          <Stack.Navigator>
-            <Stack.Screen name="Root" component={BottomTabNavigator} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </View>
+      <ApolloProvider client={client}>
+         <View style={styles.container}>
+          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+            <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
+              <Stack.Navigator>
+                <Stack.Screen name="Root" component={BottomTabNavigator} />
+              </Stack.Navigator>
+            </NavigationContainer>
+        </View>
+      </ApolloProvider>
     );
   }
 }
