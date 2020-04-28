@@ -9,7 +9,7 @@ const httplink = createHttpLink({
 
 const client = new ApolloClient({
     link:httplink,
-    cache:InMemoryCache
+    cache: new InMemoryCache()
 })
 
 module.exports = {
