@@ -5,7 +5,7 @@ function Health() {
     return (
         <SafeAreaView style={{flex:1}}>
             <View style={styles.container}>
-                <Text> Faq</Text>
+                <Text>Health</Text>
             </View>
         </SafeAreaView>
         );
