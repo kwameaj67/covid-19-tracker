@@ -5,7 +5,7 @@ function Report() {
     return (
         <SafeAreaView style={{flex:1}}>
             <View style={styles.container}>
-                <Text>Faq</Text>
+                <Text> Text</Text>
             </View>
         </SafeAreaView>
         );
