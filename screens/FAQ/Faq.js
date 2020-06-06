@@ -1,5 +1,9 @@
 import React from 'react'
 import {StyleSheet,View,Text,SafeAreaView} from 'react-native'
+import Colors from '../../constants/Colors'
+import Fonts from '../../constants/Fonts'
+import Layout from '../../constants/Layout'
+import ActionSheet from 'react-native-actions-sheet'
 
 function Faq() {
     return (

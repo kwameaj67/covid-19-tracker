@@ -1,5 +1,4 @@
-import * as WebBrowser from 'expo-web-browser';
-import * as React from 'react';
+import React,{createRef} from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View ,Modal,FlatList,ActivityIndicator} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useQuery } from '@apollo/react-hooks'
@@ -7,6 +6,10 @@ import { CovidQuery,GlobalTotal } from '../../Graphql/Queries'
 import { client } from '../../Graphql/Client'
 import moment from 'moment'
 import { AntDesign } from '@expo/vector-icons'
+import Colors from '../../constants/Colors'
+import Layout from '../../constants/Layout'
+import ActionSheet from 'react-native-actions-sheet'
+import Fonts from '../../constants/Fonts'
 
  class HomeScreen extends React.Component {
    state = { 
