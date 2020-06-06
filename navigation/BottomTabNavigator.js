@@ -6,6 +6,8 @@ import Home from '../screens/Home/Home';
 import Report from '../screens/Report/Report';
 import Health from '../screens/Health/Health';
 import Faq from '../screens/FAQ/Faq';
+import Vitals from '../screens/Vitals/Vitals'
+import Settings from '../screens/Settings/Settings'
 
 
 const BottomTab = createBottomTabNavigator();
@@ -36,19 +38,19 @@ export default function BottomTabNavigator({ navigation, route }) {
         }}
       />
       <BottomTab.Screen
-        name="Links"
-        component={Health}
+        name="Vitals"
+        component={Vitals}
         options={{
-          title: 'Health',
+          title: 'Vitals',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="hearthbeat-alt" icon="health" />,
         }}
       />
       <BottomTab.Screen
-        name="Links"
-        component={Faq}
+        name="Settings"
+        component={Settings}
         options={{
-          title: 'FAQs',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="profile" icon="faq" />,
+          title: 'Settings',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-settings" icon="settings" />,
         }}
       />
     </BottomTab.Navigator>
@@ -61,7 +63,11 @@ function getHeaderTitle(route) {
   switch (routeName) {
     case 'Home':
       return 'COVID-19 Worldwide';
-    case 'Links':
+    case 'Report':
+      return 'Report';
+      case 'Vitals':
+      return 'Vitals';
+      case 'Settings':
       return 'Settings';
   }
 }
