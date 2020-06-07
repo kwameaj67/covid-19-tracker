@@ -1,4 +1,4 @@
-import {SimpleLineIcons,MaterialCommunityIcons,MaterialIcons,AntDesign,Fontisto } from '@expo/vector-icons';
+import {MaterialIcons,AntDesign,FontAwesome,Entypo } from '@expo/vector-icons';
 import * as React from 'react';
 
 import Colors from '../constants/Colors';
@@ -6,7 +6,7 @@ import Colors from '../constants/Colors';
 export default function TabBarIcon(props) {
   if(this.props.icon ==="home"){
     return (
-      <MaterialCommunityIcons
+      <Entypo
         name={props.name}
         size={24}
         style={{ marginBottom: -3 }}
@@ -15,7 +15,7 @@ export default function TabBarIcon(props) {
     );
   }else  if(this.props.icon ==="report"){
     return (
-      <MaterialIcons
+      <FontAwesome
         name={props.name}
         size={24}
         style={{ marginBottom: -3 }}
@@ -24,16 +24,16 @@ export default function TabBarIcon(props) {
     );
   }else  if(this.props.icon ==="health"){
     return (
-      <Fontisto
+      <MaterialIcons
         name={props.name}
         size={24}
         style={{ marginBottom: -3 }}
         color={props.focused ? Colors.tabIconSelected : Colors.tabIconDefault}
       />
     );
-  }else  if(this.props.icon ==="faq"){
+  }else  if(this.props.icon ==="settings"){
     return (
-      <AntDesign
+      <Ionicons
         name={props.name}
         size={24}
         style={{ marginBottom: -3 }}
