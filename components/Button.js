@@ -32,13 +32,13 @@ export default class  Button extends React.Component{
         <View>
            {Platform.OS === 'ios' ?
             <TouchableOpacity activeOpacity={1} onPress={this.props.tap}  onPressIn={()=>{this.handlePressIn()}} onPressOut={()=>{this.handlePressOut()}} >
-                <Animated.View  style={[this.props.buttonStyle,animationStyle]}>
+                <Animated.View  style={[styles.button,animationStyle]}>
                     <Text style={styles.text}>{this.props.title}</Text>
                 </Animated.View>
             </TouchableOpacity>
          :
           <TouchableWithoutFeedback onPress={this.props.tap}  onPressIn={()=>{this.handlePressIn()}} onPressOut={()=>{this.handlePressOut()}} >
-                    <Animated.View  style={[this.props.buttonStyle,animationStyle]}>
+                    <Animated.View  style={[styles.button,animationStyle]}>
                         <Text style={styles.text}>{this.props.title}</Text>
                     </Animated.View>
             </TouchableWithoutFeedback>
@@ -50,7 +50,7 @@ export default class  Button extends React.Component{
 }
 const styles = StyleSheet.create({
     button:{
-        backgroundColor:Colors.green,
+        backgroundColor:Colors.black,
         elevation:1,
         borderRadius:5,
         padding:18,
