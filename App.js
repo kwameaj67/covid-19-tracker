@@ -7,10 +7,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ApolloProvider } from 'react-apollo'
 import { client } from './Graphql/Client'
-import BottomTabNavigator from './navigation/BottomTabNavigator';
 import useLinking from './navigation/useLinking';
+import StackNavigator from './navigation/StackNavigator'
 
-const Stack = createStackNavigator();
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = React.useState(false);
@@ -30,7 +29,11 @@ export default function App(props) {
         // Load fonts
         await Font.loadAsync({
           ...Ionicons.font,
-          'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
+          'Bold':require('./assets/fonts/Raleway-Bold.ttf'),
+          'SemiBold':require('./assets/fonts/Raleway-SemiBold.ttf'),
+          'Medium':require('./assets/fonts/Raleway-Medium.ttf'),
+          'Regular':require('./assets/fonts/Raleway-Regular.ttf'),
+          'Light':require('./assets/fonts/Raleway-Light.ttf'),
         });
       } catch (e) {
         // We might want to provide this error information to an error reporting service
@@ -49,19 +52,14 @@ export default function App(props) {
   } else {
     return (
       <ApolloProvider client={client}>
-         <View style={styles.container}>
+        <View style={styles.container}>
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-            <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
-              <Stack.Navigator>
-                <Stack.Screen name="Root" component={BottomTabNavigator} />
-              </Stack.Navigator>
-            </NavigationContainer>
+          <StackNavigator/>
         </View>
       </ApolloProvider>
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
