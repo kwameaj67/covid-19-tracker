@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
       },
       textContainer:{
         borderColor:Colors.border,
-        borderidth:1.5,
+        borderWidth:1,
         borderRadius:5,
         padding:7,
       }
