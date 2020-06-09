@@ -27,7 +27,7 @@ export default class Header extends React.Component {
 			);
 		}else if(this.props.type === "App"){
 			return (
-				<View>
+				<View style={styles.header}>
 					<View style={[styles.container, this.props.style]}>
 						<View style={styles.backAndTitleContainer}>
 							{this.props.leftAction}
@@ -37,7 +37,7 @@ export default class Header extends React.Component {
 						</View>
 					</View>
 						<View style={styles.Appheader}>
-							<Text style={styles.headerTitleStyleApp}>{this.props.title}</Text>
+							<Text style={styles.AppHeaderText}>{this.props.title}</Text>
 						</View>
 				</View>
 			);
@@ -50,7 +50,8 @@ const styles = StyleSheet.create({
 		backgroundColor: 'white',
 		flexDirection: 'row',
 		justifyContent: 'space-between',
-		padding: 10,
+		paddingHorizontal: 20,
+		paddingVertical:30,
 		alignItems: 'center'
 	},
 	tabHeaderContainer:{
@@ -65,10 +66,15 @@ const styles = StyleSheet.create({
 		paddingHorizontal:30
 	},
 	header:{
-		alignItems:'center'
+	borderBottomColor:Colors.border,
+	borderBottomWidth:0.3
+	},
+	AppHeaderText:{
+		fontSize:25,
+		fontFamily:"Bold"
 	},
 	Appheader:{
-		padidng:10
+		paddingHorizontal:20
 	},
 	headerTitleStyle: {
 		fontSize:Fonts.t1,
