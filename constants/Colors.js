@@ -13,7 +13,7 @@ export default {
   black,
   background,
   tabIconDefault: grey,
-  tabIconSelected: black,
+  tabIconSelected: "black",
   tabBar: '#fefefe',
   errorBackground: 'red',
   errorText: '#fff',
