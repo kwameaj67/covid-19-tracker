@@ -1,10 +1,10 @@
-import {MaterialIcons,AntDesign,FontAwesome,Entypo } from '@expo/vector-icons';
+import {MaterialIcons,Ionicons,FontAwesome,Entypo } from '@expo/vector-icons';
 import * as React from 'react';
 
 import Colors from '../constants/Colors';
 
 export default function TabBarIcon(props) {
-  if(this.props.icon ==="home"){
+  if(props.icon ==='home'){
     return (
       <Entypo
         name={props.name}
@@ -13,7 +13,7 @@ export default function TabBarIcon(props) {
         color={props.focused ? Colors.tabIconSelected : Colors.tabIconDefault}
       />
     );
-  }else  if(this.props.icon ==="report"){
+  }else if(props.icon ==='report'){
     return (
       <FontAwesome
         name={props.name}
@@ -22,18 +22,18 @@ export default function TabBarIcon(props) {
         color={props.focused ? Colors.tabIconSelected : Colors.tabIconDefault}
       />
     );
-  }else  if(this.props.icon ==="health"){
+  }else  if(props.icon ==='health'){
     return (
-      <MaterialIcons
+      <Ionicons
         name={props.name}
         size={24}
         style={{ marginBottom: -3 }}
         color={props.focused ? Colors.tabIconSelected : Colors.tabIconDefault}
       />
     );
-  }else  if(this.props.icon ==="settings"){
+  }else  if(props.icon ==='settings'){
     return (
-      <Ionicons
+      <MaterialIcons
         name={props.name}
         size={24}
         style={{ marginBottom: -3 }}
