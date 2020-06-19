@@ -108,9 +108,9 @@ import Fonts from '../../constants/Fonts'
           <FlatList 
              extraData={this.state}
              data={this.state.covidData}
-                    keyExtractor={item => item.key}
+                    keyExtractor={item => item.id}
                     renderItem={({item})=>(
-                        <View key={item.key} style={{paddingHorizontal:10}}>
+                        <View key={item.id} style={{paddingHorizontal:10}}>
                             <TouchableOpacity 
                                onPress={()=>{
                                 this.setState({
