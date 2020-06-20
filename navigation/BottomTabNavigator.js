@@ -8,6 +8,7 @@ import Health from '../screens/Health/Health';
 import Faq from '../screens/FAQ/Faq';
 import Vitals from '../screens/Vitals/Vitals'
 import Settings from '../screens/Settings/Settings'
+import Colors from '../constants/Colors';
 
 
 const BottomTab = createBottomTabNavigator();
@@ -20,13 +21,21 @@ export default function BottomTabNavigator({ navigation, route }) {
   navigation.setOptions({ headerTitle: getHeaderTitle(route) });
 
   return (
-    <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
+    <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}
+    tabBarOptions={{
+      activeTintColor:"black",
+      inactiveTintColor:Colors.grey,
+      showLabel:true,
+      tabStyle:{padding:0},
+      labelStyle:{fontFamily:"Medium",letterSpacing:0.2,fontSize:12}
+    }}
+    >
       <BottomTab.Screen
         name="Home"
         component={Home}
         options={{
           title: 'Home',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="home-variant" icon="home"/>,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused}  icon="home" name="home" />,
         }}
       />
       <BottomTab.Screen
@@ -34,7 +43,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={Report}
         options={{
           title: 'Report',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="alarm" icon="report" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused}  icon="report" name="send" />,
         }}
       />
       <BottomTab.Screen
@@ -42,7 +51,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={Vitals}
         options={{
           title: 'Vitals',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="hearthbeat-alt" icon="health" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused}  icon="health" name="ios-pulse" />,
         }}
       />
       <BottomTab.Screen
@@ -50,7 +59,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={Settings}
         options={{
           title: 'Settings',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-settings" icon="settings" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused}  icon="settings" name="settings" />,
         }}
       />
     </BottomTab.Navigator>
