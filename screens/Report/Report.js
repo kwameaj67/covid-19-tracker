@@ -50,7 +50,14 @@ function Report() {
         <SafeAreaView style={{flex:1,backgroundColor:'white'}}>
             <Header leftAction={LeftView()} rightAction={RightView()} title="Case Report" type="App"/>
             <View style={styles.container}>
-                <Text>Report</Text>
+            <View style={{justifyContent:'center',alignItems:'center'}}>
+                    <Text>You have no vitals</Text>
+                    <TouchableOpacity activeOpacity={0.8}>
+                      <View>
+                          <Text style={styles.btnTxt}>Log vitals</Text>
+                      </View>
+                    </TouchableOpacity>
+                </View>
             </View>
         </SafeAreaView>
         );
@@ -62,5 +69,12 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent:'center',
         alignItems:'center'
-    }
+    },
+    btnTxt:{
+      letterSpacing: 0,
+      fontSize: 18,
+      color: Colors.black,
+      fontFamily: "Medium",
+      textAlign:'center'
+      }
 })
