@@ -6,6 +6,8 @@ import Layout from '../../constants/Layout'
 import Fonts from '../../constants/Fonts'
 import Header from '../../components/Header'
 import { AntDesign,Ionicons,FontAwesome }  from '@expo/vector-icons';
+import Button from '../../components/Button'
+import RadioButtonRN from 'radio-buttons-react-native'
 function Vitals() {
     const LeftView = ()=> {
         return (
@@ -13,13 +15,13 @@ function Vitals() {
             {Platform.OS === 'ios' ?
             <TouchableOpacity activeOpacity={0.8} onPress={()=>{}}>
             <View style={styles.backBtn}>
-            <FontAwesome name="user-circle-o" size={24} color="black" />
+               <FontAwesome name="user-circle-o" size={24} color="black" />
             </View>
           </TouchableOpacity>
           :
           <TouchableNativeFeedback onPress={() =>{}} background={TouchableNativeFeedback.SelectableBackgroundBorderless()} useForeground={true} >
             <View style={styles.backBtn}>
-            <FontAwesome name="user-circle-o" size={24} color="black" />
+               <FontAwesome name="user-circle-o" size={24} color="black" />
             </View>
           </TouchableNativeFeedback>
             }
@@ -50,7 +52,6 @@ function Vitals() {
           <Header leftAction={LeftView()} rightAction={RightView()} title="Vitals" type="App"/>
             <View style={styles.container}>
                 <View style={{justifyContent:'center',alignItems:'center'}}>
-                    <Text>You have no vitals</Text>
                     <TouchableOpacity activeOpacity={0.8}>
                       <View>
                           <Text style={styles.btnTxt}>Log vitals</Text>
