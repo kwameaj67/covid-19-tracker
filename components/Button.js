@@ -29,31 +29,31 @@ export default class  Button extends React.Component{
           }
        if(this.props.type === "normal"){
         return(
-        <View>
-           {Platform.OS === 'ios' ?
-            <TouchableOpacity activeOpacity={1} onPress={this.props.tap}  onPressIn={()=>{this.handlePressIn()}} onPressOut={()=>{this.handlePressOut()}} >
-                <Animated.View  style={[styles.button,animationStyle]}>
-                    <Text style={styles.text}>{this.props.title}</Text>
-                </Animated.View>
-            </TouchableOpacity>
-         :
-          <TouchableWithoutFeedback onPress={this.props.tap}  onPressIn={()=>{this.handlePressIn()}} onPressOut={()=>{this.handlePressOut()}} >
-                    <Animated.View  style={[styles.button,animationStyle]}>
-                        <Text style={styles.text}>{this.props.title}</Text>
-                    </Animated.View>
-            </TouchableWithoutFeedback>
-        }
-        </View>
+          <View>
+            {Platform.OS === 'ios' ?
+              <TouchableOpacity activeOpacity={1} onPress={this.props.tap}  onPressIn={()=>{this.handlePressIn()}} onPressOut={()=>{this.handlePressOut()}} >
+                  <Animated.View  style={[styles.button,animationStyle]}>
+                      <Text style={styles.text}>{this.props.title}</Text>
+                  </Animated.View>
+              </TouchableOpacity>
+          :
+            <TouchableWithoutFeedback onPress={this.props.tap}  onPressIn={()=>{this.handlePressIn()}} onPressOut={()=>{this.handlePressOut()}} >
+                      <Animated.View  style={[styles.button,animationStyle]}>
+                          <Text style={styles.text}>{this.props.title}</Text>
+                      </Animated.View>
+              </TouchableWithoutFeedback>
+          }
+          </View>
       )
        }
     }
 }
 const styles = StyleSheet.create({
     button:{
-        backgroundColor:Colors.black,
+        backgroundColor:"black",
         elevation:1,
         borderRadius:5,
-        padding:18,
+        padding:20,
         bottom:0
     },
     text:{
