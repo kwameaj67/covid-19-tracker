@@ -1,7 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet,} from 'react-native';
 import Fonts from '../constants/Fonts'
 import Colors from '../constants/Colors';
+import Layout from '../constants/Layout';
+import {AntDesign} from '@expo/vector-icons'
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class Header extends React.Component {
 	static defaultProps = {
@@ -41,6 +44,17 @@ export default class Header extends React.Component {
 						</View>
 				</View>
 			);
+		}else if(this.props.type === "modal"){
+			return (
+				<View style={styles.header}>
+					<View style={styles.modalContainer}>
+						<View style={{paddingVertical:10,paddingHorizontal:5,flexDirection:'row',alignItems:'center',justifyContent:'space-between'}}>
+								<Text style={styles.AppHeaderText}>{this.props.title}</Text>
+						</View>
+						{this.props.cancel}
+					</View>
+				</View>
+			);
 		}
 	}
 }
@@ -54,6 +68,14 @@ const styles = StyleSheet.create({
 		paddingVertical:30,
 		alignItems: 'center'
 	},
+	modalContainer:{
+		backgroundColor: 'white',
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		paddingHorizontal: 20,
+		paddingVertical:10,
+		alignItems: 'center'	
+	},
 	tabHeaderContainer:{
 		padding: 10,
 	},
@@ -66,8 +88,8 @@ const styles = StyleSheet.create({
 		paddingHorizontal:30
 	},
 	header:{
-	borderBottomColor:Colors.border,
-	borderBottomWidth:0.3
+		borderBottomColor:Colors.border,
+		borderBottomWidth:0.3
 	},
 	AppHeaderText:{
 		fontSize:25,
