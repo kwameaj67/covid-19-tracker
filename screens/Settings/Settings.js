@@ -7,6 +7,7 @@ import Fonts from '../../constants/Fonts'
 import Header from '../../components/Header'
 import { Entypo,Ionicons,FontAwesome }  from '@expo/vector-icons'
 import { ScrollView } from 'react-native-gesture-handler'
+import Card from '../../components/SettingLayout'
 function Settings() {
     const LeftView = ()=> {
         return (
@@ -51,72 +52,24 @@ function Settings() {
           <Header leftAction={LeftView()} rightAction={RightView()} title="Settings" type="App"/>
             <View style={styles.container}>
               <ScrollView>
-                <View style={styles.content}>
-                        <TouchableOpacity style={styles.btn} activeOpacity={0.9} onPress={()=>{}}>
-                         <View style={styles.section}>
-                            <View style={styles.txtContainer}>
-                                <Text style={styles.title}>Self Assessment</Text>
-                                <Text style={styles.summary}>Ascertain your covid 19 risk using our screen tool</Text>
-                              </View>
-                              <Entypo name="chevron-right" size={20} color={Colors.black}/>
-                       </View>
-                        </TouchableOpacity>
-                </View>
-                <View style={styles.content}>
-                    <TouchableOpacity style={styles.btn} activeOpacity={0.9} onPress={()=>{}}>
-                       <View  style={styles.section}>
-                            <View style={styles.txtContainer}>
-                                <Text style={styles.title}>FAQ's</Text>
-                                <Text style={styles.summary}>Get answers to Frequently Asked Questions</Text>
-                              </View>
-                            <Entypo name="chevron-right" size={20} color={Colors.black}/>
-                       </View>
-                      </TouchableOpacity>
-                </View>
-                <View style={styles.content}>
-                     <TouchableOpacity style={styles.btn} activeOpacity={0.9} onPress={()=>{}}>
-                        <View style={styles.section}>
-                            <View style={styles.txtContainer}>
-                                <Text style={styles.title}>Testing Center</Text>
-                                <Text style={styles.summary}>View testing methods</Text>
-                              </View>
-                              <Entypo name="chevron-right" size={20} color={Colors.black}/>
-                        </View>
-                     </TouchableOpacity>
-                </View>
-                <View style={styles.content}>
-                    <TouchableOpacity style={styles.btn} activeOpacity={0.9} onPress={()=>{}}>
-                    <View style={styles.section}>
-                        <View style={styles.txtContainer}>
-                            <Text style={styles.title}>Personal Information</Text>
-                            <Text style={styles.summary}>View your personal details here</Text>
-                          </View>
-                          <Entypo name="chevron-right" size={20} color={Colors.black}/>
-                    </View>
-                     </TouchableOpacity>
-                </View>
-                <View style={styles.content}>
-                  <TouchableOpacity style={styles.btn} activeOpacity={0.9} onPress={()=>{}}>
-                    <View style={styles.section}>
-                          <View style={styles.txtContainer}>
-                              <Text style={styles.title}>World Wide Statistics</Text>
-                              <Text style={styles.summary}>View all covid 19 cases around the glove</Text>
-                            </View>
-                            <Entypo name="chevron-right" size={20} color={Colors.black}/>
-                      </View>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.content}>
-                    <TouchableOpacity style={styles.btn} activeOpacity={0.9} onPress={()=>{}}>
-                        <View style={styles.section}>
-                              <View style={styles.txtContainer}>
-                                  <Text style={styles.title}>Share</Text>
-                                  <Text style={styles.summary}>Invite friends and family</Text>
-                                </View>
-                                <Entypo name="chevron-right" size={20} color={Colors.black}/>
-                      </View>
-                    </TouchableOpacity>
-                </View>
+                <TouchableOpacity style={styles.btn} activeOpacity={0.9} onPress={()=>{}}>
+                    <Card title="Self Assessment" body="Ascertain your covid 19 risk using our screen tool"/>               
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btn} activeOpacity={0.9} onPress={()=>{}}>
+                    <Card title="FAQ's" body="Get answers to Frequently Asked Questions"/>               
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btn} activeOpacity={0.9} onPress={()=>{}}>
+                    <Card title="Testing Center" body="View testing methods"/>               
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btn} activeOpacity={0.9} onPress={()=>{}}>
+                    <Card title="Personal Information" body="View your personal details here"/>               
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btn} activeOpacity={0.9} onPress={()=>{}}>
+                    <Card title="World Wide Statistics" body="View all covid 19 cases around the glove"/>               
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btn} activeOpacity={0.9} onPress={()=>{}}>
+                    <Card title="Share" body="Invite friends and family"/>               
+                </TouchableOpacity>
               </ScrollView>
             </View>
         </SafeAreaView>
